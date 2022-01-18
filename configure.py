@@ -1125,6 +1125,7 @@ def host_arch_cc():
     '__x86_64__'  : 'x64',
     '__s390x__'   : 's390x',
     '__riscv'     : 'riscv',
+    '__loongarch_lp64': 'loong64',
   }
 
   rtn = 'ia32' # default
