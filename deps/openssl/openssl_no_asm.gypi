@@ -44,6 +44,8 @@
       'includes': ['config/archs/VC-WIN64-ARM/no-asm/openssl.gypi'],
     }, 'target_arch=="x64" and OS=="linux"', {
       'includes': ['config/archs/linux-x86_64/no-asm/openssl.gypi'],
+    }, 'target_arch=="loong64" and OS=="linux"', {
+      'includes': ['config/archs/linux64-loongarch64/no-asm/openssl.gypi'],
     }, 'target_arch=="mips64el" and OS=="linux"', {
       'includes': ['config/archs/linux64-mips64/no-asm/openssl.gypi'],
     }, 'target_arch=="riscv64" and OS=="linux"', {
