@@ -900,6 +900,9 @@ else
 ifeq ($(findstring aarch64,$(UNAME_M)),aarch64)
 DESTCPU ?= arm64
 else
+ifeq ($(findstring loongarch64,$(UNAME_M)),loongarch64)
+DESTCPU ?= loong64
+else
 ifeq ($(findstring powerpc,$(shell uname -p)),powerpc)
 DESTCPU ?= ppc64
 else
@@ -907,6 +910,7 @@ ifeq ($(findstring riscv64,$(UNAME_M)),riscv64)
 DESTCPU ?= riscv64
 else
 DESTCPU ?= x86
+endif
 endif
 endif
 endif
@@ -928,6 +932,9 @@ else
 ifeq ($(DESTCPU),arm64)
 ARCH=arm64
 else
+ifeq ($(DESTCPU),loong64)
+ARCH=loong64
+else
 ifeq ($(DESTCPU),ppc64)
 ARCH=ppc64
 else
@@ -944,6 +951,7 @@ ifeq ($(DESTCPU),riscv64)
 ARCH=riscv64
 else
 ARCH=x86
+endif
 endif
 endif
 endif
